@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ccy:FocusLayoutManager:1.0.2@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c64d929cf138f1beff0f99ba4c20f8/jetified-FocusLayoutManager-1.0.2/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c64d929cf138f1beff0f99ba4c20f8/jetified-FocusLayoutManager-1.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c64d929cf138f1beff0f99ba4c20f8/jetified-FocusLayoutManager-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08c64d929cf138f1beff0f99ba4c20f8/jetified-FocusLayoutManager-1.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ccy/FocusLayoutManager/1.0.2/cae1a0d898cfee1ffb413ad29b48943ba4976266/FocusLayoutManager-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ccy/FocusLayoutManager/1.0.2/8d6532de5d44c78d2a836224ac5edf3f75fc08d7/FocusLayoutManager-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

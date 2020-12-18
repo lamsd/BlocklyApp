@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1994939605/FastBleLib.iml" filepath="$PROJECT_DIR$/.idea/modules/1994939605/FastBleLib.iml" group="TKBot/FastBleLib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/544174912/TKBot.iml" filepath="$PROJECT_DIR$/.idea/modules/544174912/TKBot.iml" group="TKBot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="TKBot/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/561533707/blockly.iml" filepath="$PROJECT_DIR$/.idea/modules/561533707/blockly.iml" group="TKBot/blockly" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1644747068/bluetoothlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/1644747068/bluetoothlibrary.iml" group="TKBot/bluetoothlibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1436742349/fancygifdialoglib.iml" filepath="$PROJECT_DIR$/.idea/modules/-1436742349/fancygifdialoglib.iml" group="TKBot/fancygifdialoglib" />
+    </modules>
+  </component>
+</project>

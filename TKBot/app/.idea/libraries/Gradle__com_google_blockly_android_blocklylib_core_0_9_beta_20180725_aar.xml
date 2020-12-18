@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.blockly.android:blocklylib-core:0.9-beta.20180725@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1e7c924a9e902235d9dc2e5e93b3af5/jetified-blocklylib-core-0.9-beta.20180725/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1e7c924a9e902235d9dc2e5e93b3af5/jetified-blocklylib-core-0.9-beta.20180725/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1e7c924a9e902235d9dc2e5e93b3af5/jetified-blocklylib-core-0.9-beta.20180725/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1e7c924a9e902235d9dc2e5e93b3af5/jetified-blocklylib-core-0.9-beta.20180725/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.blockly.android/blocklylib-core/0.9-beta.20180725/df832b9f134c4910e65e457c0b8f4e5e11a993eb/blocklylib-core-0.9-beta.20180725-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
