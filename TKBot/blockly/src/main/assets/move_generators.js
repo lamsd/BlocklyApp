@@ -1,5 +1,14 @@
 'use strict';
-
+        // Buzzer
+        Blockly.JavaScript['tk_buzzer'] = function(block) {
+          var dropdown_port_buzer = block.getFieldValue('port_buzer');
+          var number_frequence_port = block.getFieldValue('frequence_port');
+          var number_duration_port = block.getFieldValue('duration_port');
+          // TODO: Assemble JavaScript into code variable.
+          var code = "Turtle.buzzertk(\'" + dropdown_port_buzer +"\',"+
+                              + number_frequence_port + ', ' + number_duration_port + ');\n if(Turtle.isStop() == true){break;}\n';
+          return code;
+        };
         //Ultrasonic sensor
         Blockly.JavaScript['ultrasonic_port'] = function(block) {
             var dropdown_ul_port = block.getFieldValue('Ul_Port');

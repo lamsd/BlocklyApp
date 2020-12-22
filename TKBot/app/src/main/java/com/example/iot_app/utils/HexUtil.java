@@ -63,7 +63,8 @@ public class HexUtil {
         }
         return sb.toString().trim();
     }
-    public static String formatHexString4( int data1) {
+
+    public static String formatHexString4(int data1) {
         String hex = Integer.toHexString(data1 & 0xFF);
         int hexlenght = hex.length();
         if (hexlenght == 1) {
@@ -130,21 +131,47 @@ public class HexUtil {
     }
 
 
-    public static float hexToFloat(int hexnum){
+    public static float hexToFloat(int hexnum) {
         float f = Float.intBitsToFloat(hexnum);
-        return  f;
+        return f;
     }
 
-    public static int getDecimal(String hex){
+    public static int getDecimal(String hex) {
         String digits = "0123456789ABCDEF";
         hex = hex.toUpperCase();
         int val = 0;
-        for (int i = 0; i < hex.length(); i++)
-        {
+        for (int i = 0; i < hex.length(); i++) {
             char c = hex.charAt(i);
             int d = digits.indexOf(c);
-            val = 16*val + d;
+            val = 16 * val + d;
         }
         return val;
+    }
+
+    public static String dectoHex16(int decimal) {
+        int rem;
+        String hex = "";
+        char hexchars[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        while (decimal > 0) {
+            rem = decimal % 16;
+            hex = hex + hexchars[rem];
+            decimal = decimal / 16;
+        }
+        int slen = hex.length();
+        if (slen == 1) {
+            return hex + "000";
+        } else if (slen == 2) {
+            return hex + "00";
+        } else if (slen == 3) {
+            String s1 = hex.substring(0, 1);
+            String s2 = hex.substring(1, 3);
+            return s2 + '0' + s1;
+        } else if (slen == 4) {
+            String s1 = hex.substring(0, 2);
+            String s2 = hex.substring(2, 4);
+            return s2 + s1;
+        } else {
+            return  "0000";
+        }
     }
 }

@@ -1,5 +1,60 @@
 [
   {
+    "type": "tk_buzzer",
+    "message0": "Buzzer %1 tone %2 (14~14000Hz) t %3 (0~1000)",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "port_buzer",
+        "options": [
+          [
+            "port2",
+            "02"
+          ],
+          [
+            "port3",
+            "03"
+          ],
+          [
+            "port5",
+            "05"
+          ],
+          [
+            "port6",
+            "06"
+          ],
+          [
+            "port7",
+            "07"
+          ],
+          [
+            "port8",
+            "08"
+          ]
+        ]
+      },
+      {
+        "type": "field_number",
+        "name": "frequence_port",
+        "value": 1000,
+        "min": 14,
+        "max": 14000
+      },
+      {
+        "type": "field_number",
+        "name": "duration_port",
+        "value": 0,
+        "min": 0,
+        "max": 1000
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "Sound of life",
+    "helpUrl": ""
+  },
+  {
   "type": "move_fbward",
   "message0": "Motor %1 %2 (0 ~ 100)",
   "args0": [

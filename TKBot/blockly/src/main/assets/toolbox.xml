@@ -5,6 +5,7 @@
         <block type="movem1m2"></block>
         <block type="move_fbward"></block>
         <block type="servo_no"></block>
+        <block type="tk_buzzer"></block>
     </category>
 
     //Moulde's sensor

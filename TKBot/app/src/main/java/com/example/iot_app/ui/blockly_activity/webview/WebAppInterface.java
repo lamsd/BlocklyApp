@@ -3,6 +3,7 @@ package com.example.iot_app.ui.blockly_activity.webview;
 import android.content.Context;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
+import android.webkit.URLUtil;
 
 import com.example.iot_app.ui.blockly_activity.BlocklyActivity;
 import com.example.iot_app.ui.blockly_activity.TypeConnected;
@@ -92,6 +93,7 @@ public class WebAppInterface {
     @JavascriptInterface
     public void mservo_NO(String port, int angle) {
         //3 cặp cuối lần lượt là porti, slot, angle
+//        ff 55 06 00 02 03 port slot angle
         String mess = "ff5506000203";
         String ag = Integer.toHexString(angle);
         mess += port;
@@ -109,6 +111,17 @@ public class WebAppInterface {
         }
         Log.d(TAG, "mservo_NO: ddd");
 
+    }
+    @JavascriptInterface
+    public void buzzerTK(String port, int frequence, int duration){
+//        ff 55 09 00 02 04 02 01 00 00 00 00
+        Log.d(TAG, "buzzer: " + "frequence   " + frequence + "  duration  " + duration);
+        if (BlocklyActivity.typeConnected == TypeConnected.HC05) {
+            BlocklyActivity.hc05Send("ff5509000204" +port + "01"+HexUtil.dectoHex16(frequence)+ HexUtil.dectoHex16(duration));
+            Log.d(TAG, "buzzer: " + "FRR   " + HexUtil.dectoHex16(frequence) + "  DUR  " + HexUtil.dectoHex16(duration));
+        }
+        if (BlocklyActivity.typeConnected == TypeConnected.HM10) {
+        }
     }
     @JavascriptInterface
     public void servo(String port, String slot, int angle) {
@@ -132,6 +145,7 @@ public class WebAppInterface {
     }
     @JavascriptInterface
     public void moveMotorM1M2(int M1data, int M2data) {
+//        ff 55 07 00 02 02 00 00 00 00
         Log.d(TAG, "moveMotorM1M2: " + "M1   " + M1data + "  M2  " + M2data);
         String M1stringmotor = "";
         String M2stringmotor = "" ;

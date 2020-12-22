@@ -102,12 +102,12 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
     public static int ultradata6 = 0;
 
     public static boolean avoidData = false;
-    public static  boolean avoidData1 = false;
-    public static  boolean avoidData2 = false;
-    public static  boolean avoidData3 = false;
-    public static  boolean avoidData4 = false;
-    public static  boolean avoidData5 = false;
-    public static  boolean avoidData6 = false;
+    public static boolean avoidData1 = false;
+    public static boolean avoidData2 = false;
+    public static boolean avoidData3 = false;
+    public static boolean avoidData4 = false;
+    public static boolean avoidData5 = false;
+    public static boolean avoidData6 = false;
 
     public static boolean touchData = false;
     public static boolean touchData1 = false;
@@ -154,7 +154,8 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
     //runable
     Runnable mRunable;
     int count = 1;
-    Handler handler  = new Handler();
+    Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,7 +192,6 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
             }
         }
     }
-
 
 
     @NonNull
@@ -305,7 +305,7 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
         optionsMenu = menu;
         bluetoothMenu = optionsMenu.findItem(R.id.controler_bluetooth);
         bluetoothMenu.setIcon(R.drawable.black_bluetooth);
-        return  super.onCreateOptionsMenu(menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -331,12 +331,10 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NotNull MenuItem item) {
-        if(item.getItemId() == R.id.controler_bluetooth){
-            if(hc05Address == null)
-            {
+        if (item.getItemId() == R.id.controler_bluetooth) {
+            if (hc05Address == null) {
                 showAlertDialog();
-            }
-            else{
+            } else {
                 showDisConnectDialog();
             }
         }
@@ -355,7 +353,7 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
         }
     }
 
-    private void  showDisConnectDialog(){
+    private void showDisConnectDialog() {
 
         new FancyGifDialog.Builder(this)
                 .setTitle(getResources().getString(R.string.disconnect_device))
@@ -382,16 +380,16 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
                 .OnNegativeClicked(new FancyGifDialogListener() {
                     @Override
                     public void OnClick() {
-                        Toast.makeText(BlocklyActivity.this,getResources().getString(R.string.cancel),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BlocklyActivity.this, getResources().getString(R.string.cancel), Toast.LENGTH_SHORT).show();
                     }
                 })
                 .build();
     }
+
     private void showAlertDialog() {
-        try{
+        try {
             bluetoothMenu.setIcon(R.drawable.black_bluetooth);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
         // Create Alert using Builder
@@ -555,7 +553,6 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
     }
 
 
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -578,12 +575,12 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
 
     private class ReceiveData extends Thread {
         InputStream socketInputStream;
-        byte[] buffer = new byte[23];
-        byte[] buffer1 = new byte[23];
-       // byte[] buffer2 = new byte[20];
+        byte[] buffer = new byte[15];
+        byte[] buffer1 = new byte[15];
+        // byte[] buffer2 = new byte[20];
         int bytes;
         int bytes1;
-        int bytes2;
+        // int bytes2;
 
         @Override
         public void run() {
@@ -597,12 +594,19 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
                     bytes1 = socketInputStream.read(buffer1);
 //                    bytes2 = socketInputStream.read(buffer2);
                     //read mesage là chuổi nhận về từ board,`
-                    String readMessage = new String(buffer, 0, bytes);
-                    String readMessage1 = new String(buffer1, 0, bytes1);
-                   // String readMessage2 = new String(buffer2, 0, bytes2);
-                    String s = readMessage+readMessage1;//+readMessage2;
-                    //String s = HexUtil.formatHexString(buffer, true);
-                    Log.i("logging",  readMessage  +" "+ readMessage1);//+ " "+ readMessage2);
+//                    String readMessage = new String(buffer, 0, bytes);
+//                    String readMessage1 = new String(buffer1, 0, bytes1);
+//                   // String readMessage2 = new String(buffer2, 0, bytes2);
+////                    String s = readMessage+readMessage1;//+readMessage2;
+//                    Log.i("String dâtta", readMessage + readMessage1);
+                    String s1 = HexUtil.formatHexString(buffer, true);
+                    String s2 = HexUtil.formatHexString(buffer1, true);
+                    String s = s1 + " " + s2;
+                    Log.i("loggingSpec", s1 + " " + s2);//+ " "+ readMessage2);
+
+                    Log.i("loggingAlll", s);//+ " "+ readMessage2);
+
+//                    Log.i("logging",  readMessage  +" "+ readMessage1);//+ " "+ readMessage2);
 
                     handler.post(new Runnable() {
                         @Override
@@ -640,6 +644,7 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
                             getAvoidValue(s);
                         }
                     });
+
                 } catch (IOException e) {
                     Log.d(TAG, "ReceiveData:" + e.getMessage());
                     Intent intent = new Intent(BlocklyActivity.this, BlocklyActivity.class);
@@ -652,6 +657,7 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
                         bluetoothMenu.setIcon(R.drawable.black_bluetooth);
                     }
                 }
+
             }
         }
     }
