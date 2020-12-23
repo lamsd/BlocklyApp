@@ -408,6 +408,65 @@ public class ConvertUtils {
         ;
     }
 
+    public static void getButtonValue(String s) {
+//      ID 62 74 port value[1] : The button sensor.
+        if (s.contains("62 74 01 00")) {
+            Log.d("TAG", "getButtonValue1: true");
+            BlocklyActivity.buttonData1 = true;   // touch
+        } else if (s.contains("62 74 01 01")) {
+            Log.d("TAG", "getButtonValue1: false");
+            BlocklyActivity.buttonData1 = false;
+        }
+        if (s.contains("62 74 02 00")) {
+            Log.d("TAG", "getButtonValue2: true");
+            BlocklyActivity.buttonData2 = true;   // touch
+        } else if (s.contains("62 74 02 01")) {
+            Log.d("TAG", "getButtonValue2: false");
+            BlocklyActivity.buttonData2 = false;
+        }
+        ;
+        if (s.contains("62 74 03 00")) {
+            Log.d("TAG", "getButtonValue3: true");
+            BlocklyActivity.buttonData3 = true;   // touch
+        } else if (s.contains("62 74 03 01")) {
+            Log.d("TAG", "getButtonValue3: false");
+            BlocklyActivity.buttonData3 = false;
+        }
+        ;
+        if (s.contains("62 74 05 00")) {
+            Log.d("TAG", "getButtonValue5: true");
+            BlocklyActivity.buttonData5 = true;   // touch
+        } else if (s.contains("62 74 05 01")) {
+            Log.d("TAG", "getButtonValue5: false");
+            BlocklyActivity.buttonData5 = false;
+        }
+        ;
+        if (s.contains("62 74 06 00")) {
+            Log.d("TAG", "getButtonValue6: true");
+            BlocklyActivity.buttonData6 = true;   // touch
+        } else if (s.contains("62 74 06 01")) {
+            Log.d("TAG", "getButtonValue6: false");
+            BlocklyActivity.buttonData6 = false;
+        }
+        ;
+        if (s.contains("62 74 07 00")) {
+            Log.d("TAG", "getButtonValue7: true");
+            BlocklyActivity.buttonData7 = true;   // touch
+        } else if (s.contains("62 74 07 01")) {
+            Log.d("TAG", "getButtonValue7: false");
+            BlocklyActivity.buttonData7 = false;
+        }
+        ;
+        if (s.contains("62 74 08 00")) {
+            Log.d("TAG", "getButtonValue8: true");
+            BlocklyActivity.buttonData8 = true;   // touch
+        } else if (s.contains("62 74 08 01")) {
+            Log.d("TAG", "getButtonValue8: false");
+            BlocklyActivity.buttonData8 = false;
+        }
+        ;
+    }
+
     public static void requestBlePermissions(final Activity activity, int requestCode) {
         ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, requestCode);
     }

@@ -9,6 +9,13 @@
                               + number_frequence_port + ', ' + number_duration_port + ');\n if(Turtle.isStop() == true){break;}\n';
           return code;
         };
+        Blockly.JavaScript['button_press'] = function(block) {
+          var dropdown_port_button = block.getFieldValue('port_button');
+          // TODO: Assemble JavaScript into code variable.
+         var code = "Turtle.buttomodule(\'"+dropdown_port_button+ "\')" ;
+          // TODO: Change ORDER_NONE to the correct strength.
+          return [code, Blockly.JavaScript.ORDER_ATOMIC];
+        };
         //Ultrasonic sensor
         Blockly.JavaScript['ultrasonic_port'] = function(block) {
             var dropdown_ul_port = block.getFieldValue('Ul_Port');

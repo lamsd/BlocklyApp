@@ -1,5 +1,49 @@
 [
   {
+    "type": "button_press",
+    "message0": "Button  %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "port_button",
+        "options": [
+          [
+            "port1",
+            "01"
+          ],
+          [
+            "port2",
+            "02"
+          ],
+          [
+            "port3",
+            "03"
+          ],
+          [
+            "port5",
+            "05"
+          ],
+          [
+            "port6",
+            "06"
+          ],
+          [
+            "port7",
+            "07"
+          ],
+          [
+            "port8",
+            "08"
+          ]
+        ]
+      }
+    ],
+    "output": null,
+    "colour": 60,
+    "tooltip": "Button and pressed",
+    "helpUrl": ""
+  },
+  {
     "type": "tk_buzzer",
     "message0": "Buzzer %1 tone %2 (14~14000Hz) t %3 (0~1000)",
     "args0": [

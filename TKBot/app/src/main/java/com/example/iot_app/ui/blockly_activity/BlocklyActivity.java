@@ -58,6 +58,7 @@ import java.io.InputStream;
 import java.util.Locale;
 import java.util.UUID;
 
+import static com.example.iot_app.utils.ConvertUtils.getButtonValue;
 import static com.example.iot_app.utils.ConvertUtils.getTouchValue;
 import static com.example.iot_app.utils.ConvertUtils.getAvoidValue;
 import static com.example.iot_app.utils.ConvertUtils.getLinevalue;
@@ -108,6 +109,15 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
     public static boolean avoidData4 = false;
     public static boolean avoidData5 = false;
     public static boolean avoidData6 = false;
+
+    public static boolean buttonData = false;
+    public static boolean buttonData1 = false;
+    public static boolean buttonData2 = false;
+    public static boolean buttonData3 = false;
+    public static boolean buttonData5 = false;
+    public static boolean buttonData6 = false;
+    public static boolean buttonData7 = false;
+    public static boolean buttonData8 = false;
 
     public static boolean touchData = false;
     public static boolean touchData1 = false;
@@ -642,6 +652,12 @@ public class BlocklyActivity extends RainbowHatBlocklyBaseActivity {
                         @Override
                         public void run() {
                             getAvoidValue(s);
+                        }
+                    });
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            getButtonValue(s);
                         }
                     });
 

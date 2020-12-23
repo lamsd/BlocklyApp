@@ -55,6 +55,12 @@ Turtle.mAFServo = function(port, angle, duration){
       Android.buzzerTK(port, frequence, duration);
  };
 
+ Turtle.buttomodule = function(port){
+ sleep(50);
+ return Android.buttonmu(port);
+ };
+
+// Ultrasonic sensor
  Turtle.ultraSensor = function(port){
     sleep(60);
     return Android.requestSensor(port);

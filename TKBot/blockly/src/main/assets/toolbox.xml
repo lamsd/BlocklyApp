@@ -20,6 +20,7 @@
         <block type="touch_sensor"></block>
         <block type="avoid_sensor"></block>
         <block type="line_follow2"></block>
+        <block type="button_press"></block>
     </category>
 
     <category name="Control" colour="#5CA65C">
